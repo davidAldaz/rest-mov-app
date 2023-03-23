@@ -52,13 +52,13 @@ export const getComments = async (req, res) => {
 //addEstablec
 export const addEstablec = async (req, res) => {
     const {ruc_est, nombre_est, direccion_est, latitud_est, longitud_est, telefono_est,
-            horario_est, correo_est, passwd_est, imagen_est, likes_est} = req.body;
+            horario_est, correo_est, passwd_est, imagen_est} = req.body;
     try {
         const passwdHash = await encrypt(passwd_est);
         const [rows] = await mysqlConnection.query(`INSERT INTO establecimientos (ruc_est, nombre_est, direccion_est, latitud_est, longitud_est, telefono_est,
-            horario_est, correo_est, passwd_est, imagen_est)
+            horario_est, correo_est, passwd_est, imagen_est, likes_est)
         VALUES (?,?,?,?,?,?,?,?,?,?)`,[ruc_est, nombre_est, direccion_est, latitud_est, longitud_est, telefono_est,
-           horario_est, correo_est, passwdHash, imagen_est, likes_est]);
+           horario_est, correo_est, passwdHash, imagen_est, 1]);
           res.send([rows]);
     } catch (error) {
         //return res.status(500).json({

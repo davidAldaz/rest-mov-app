@@ -144,8 +144,8 @@ DROP TABLE IF EXISTS `establecimientos`;
 CREATE TABLE `establecimientos` (
   `id_est` int NOT NULL AUTO_INCREMENT,
   `ruc_est` varchar(13) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `nombre_est` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `direccion_est` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `nombre_est` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `direccion_est` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `latitud_est` decimal(18,16) DEFAULT NULL,
   `longitud_est` decimal(18,16) DEFAULT NULL,
   `telefono_est` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
